@@ -1,10 +1,16 @@
 import pandas
+import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report
+
+# nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('punkt_tab')
+
 
 df = pandas.read_excel('Learn.xlsx')
 df = df.fillna('')
@@ -50,6 +56,3 @@ def response_user():
         predicted_category = predict_category(user_question)
         print(f"Предсказанная категория: {predicted_category}")
 
-
-if __name__ == '__main__':
-    response_user()
