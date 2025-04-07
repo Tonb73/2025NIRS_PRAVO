@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score, classification_report
 # nltk.download('punkt_tab')
 
 
-df = pandas.read_excel('Learn.xlsx')
+df = pandas.read_excel('/home/shaman_stepan/PycharmProjects/OOProject/2025NIRS_PRAVO/nltkOur/Learn(full).xlsx')
 df = df.fillna('')
 desc, cat = df["Desc"], df["Cat"]
 stopwords_set = set(stopwords.words("russian"))
@@ -56,3 +56,8 @@ def response_user():
         predicted_category = predict_category(user_question)
         print(f"Предсказанная категория: {predicted_category}")
 
+
+def all_categories():
+    return set(cat)
+# if __name__ == '__main__':
+#     response_user()
